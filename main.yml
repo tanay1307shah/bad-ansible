@@ -60,7 +60,7 @@
 
   tasks:
   - name: install tomcat
-    package:
+    yum:
       name: tomcat
       state: latest
   - name: enable tomcat at boot
@@ -127,12 +127,12 @@
   - name: install progress
     command: "yum install -y postgresql-server"
 
-#   - name: install postgres
-#    yum:
-#      name: postgresql-server
-#      state: latest
+  - name: install postgres
+    yum:
+      name: postgresql-server
+      state: latest
   
-  - name: enable postgresql at boot
+  - name: enable apache at boot
     service:
       name: postgresql
       enabled: yes
