@@ -1,4 +1,4 @@
-me: Build three-tier-app inventory
+- name: Build three-tier-app inventory
   hosts: localhost
   gather_facts: false
   tasks:
