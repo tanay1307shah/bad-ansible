@@ -1,0 +1,575 @@
+
+PLAY [Build three-tier-app inventory] ********************************************************************************************************************************************************************************************************
+
+TASK [Get openstack servers] *****************************************************************************************************************************************************************************************************************
+ok: [localhost]
+
+TASK [debug] *********************************************************************************************************************************************************************************************************************************
+ok: [localhost] => {
+    "r_os_server_info": {
+        "changed": false,
+        "failed": false,
+        "openstack_servers": [
+            {
+                "OS-DCF:diskConfig": "MANUAL",
+                "OS-EXT-AZ:availability_zone": "nova",
+                "OS-EXT-SRV-ATTR:host": "comp00.example.com",
+                "OS-EXT-SRV-ATTR:hostname": "frontend1",
+                "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                "OS-EXT-SRV-ATTR:instance_name": "instance-00000008",
+                "OS-EXT-SRV-ATTR:kernel_id": "",
+                "OS-EXT-SRV-ATTR:launch_index": 0,
+                "OS-EXT-SRV-ATTR:ramdisk_id": "",
+                "OS-EXT-SRV-ATTR:reservation_id": "r-0wnntc9g",
+                "OS-EXT-SRV-ATTR:root_device_name": "/dev/vda",
+                "OS-EXT-SRV-ATTR:user_data": null,
+                "OS-EXT-STS:power_state": 1,
+                "OS-EXT-STS:task_state": null,
+                "OS-EXT-STS:vm_state": "active",
+                "OS-SCH-HNT:scheduler_hints": null,
+                "OS-SRV-USG:launched_at": "2020-05-06T21:10:58.000000",
+                "OS-SRV-USG:terminated_at": null,
+                "accessIPv4": "10.10.10.3",
+                "accessIPv6": "",
+                "addresses": {
+                    "int_network": [
+                        {
+                            "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:aa:ff:3b",
+                            "OS-EXT-IPS:type": "fixed",
+                            "addr": "20.20.20.12",
+                            "version": 4
+                        },
+                        {
+                            "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:aa:ff:3b",
+                            "OS-EXT-IPS:type": "floating",
+                            "addr": "10.10.10.3",
+                            "version": 4
+                        }
+                    ]
+                },
+                "adminPass": null,
+                "az": "nova",
+                "block_device_mapping": null,
+                "cloud": "ospcloud",
+                "config_drive": "",
+                "created": "2020-05-06T21:10:41Z",
+                "created_at": "2020-05-06T21:10:41Z",
+                "description": "frontend1",
+                "disk_config": "MANUAL",
+                "flavor": {
+                    "id": "c1dcac31-e195-420c-ac01-15fb443225ca"
+                },
+                "has_config_drive": false,
+                "host": "comp00.example.com",
+                "hostId": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                "host_id": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                "host_status": "UP",
+                "hostname": "frontend1",
+                "hypervisor_hostname": "comp00.example.com",
+                "id": "66c2b373-0c55-4017-8c85-77ff2710b142",
+                "image": {
+                    "id": "9c541893-533a-446a-86ae-b64531f7b020"
+                },
+                "instance_name": "instance-00000008",
+                "interface_ip": "10.10.10.3",
+                "kernel_id": "",
+                "key_name": "ansible_ssh",
+                "launch_index": 0,
+                "launched_at": "2020-05-06T21:10:58.000000",
+                "location": {
+                    "cloud": "ospcloud",
+                    "project": {
+                        "domain_id": null,
+                        "domain_name": "default",
+                        "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                        "name": "admin"
+                    },
+                    "region_name": "RegionOne",
+                    "zone": "nova"
+                },
+                "locked": false,
+                "metadata": {
+                    "deployment_name": "QA",
+                    "group": "frontends"
+                },
+                "name": "frontend1",
+                "networks": {},
+                "os-extended-volumes:volumes_attached": [],
+                "personality": null,
+                "power_state": 1,
+                "private_v4": "20.20.20.12",
+                "progress": 0,
+                "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "properties": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:host": "comp00.example.com",
+                    "OS-EXT-SRV-ATTR:hostname": "frontend1",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000008",
+                    "OS-EXT-SRV-ATTR:kernel_id": "",
+                    "OS-EXT-SRV-ATTR:launch_index": 0,
+                    "OS-EXT-SRV-ATTR:ramdisk_id": "",
+                    "OS-EXT-SRV-ATTR:reservation_id": "r-0wnntc9g",
+                    "OS-EXT-SRV-ATTR:root_device_name": "/dev/vda",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2020-05-06T21:10:58.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "host_status": "UP",
+                    "locked": false,
+                    "os-extended-volumes:volumes_attached": [],
+                    "trusted_image_certificates": null
+                },
+                "public_v4": "10.10.10.3",
+                "public_v6": "",
+                "ramdisk_id": "",
+                "region": "RegionOne",
+                "reservation_id": "r-0wnntc9g",
+                "root_device_name": "/dev/vda",
+                "scheduler_hints": null,
+                "security_groups": [
+                    {
+                        "name": "frontend"
+                    }
+                ],
+                "server_groups": null,
+                "status": "ACTIVE",
+                "tags": [],
+                "task_state": null,
+                "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "terminated_at": null,
+                "trusted_image_certificates": null,
+                "updated": "2020-05-08T17:32:09Z",
+                "user_data": null,
+                "user_id": "97656d07875c40b38805582946989e49",
+                "vm_state": "active",
+                "volumes": []
+            },
+            {
+                "OS-DCF:diskConfig": "MANUAL",
+                "OS-EXT-AZ:availability_zone": "nova",
+                "OS-EXT-SRV-ATTR:host": "comp01.example.com",
+                "OS-EXT-SRV-ATTR:hostname": "appdb1",
+                "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                "OS-EXT-SRV-ATTR:instance_name": "instance-00000007",
+                "OS-EXT-SRV-ATTR:kernel_id": "",
+                "OS-EXT-SRV-ATTR:launch_index": 0,
+                "OS-EXT-SRV-ATTR:ramdisk_id": "",
+                "OS-EXT-SRV-ATTR:reservation_id": "r-x12i0vor",
+                "OS-EXT-SRV-ATTR:root_device_name": "/dev/vda",
+                "OS-EXT-SRV-ATTR:user_data": null,
+                "OS-EXT-STS:power_state": 1,
+                "OS-EXT-STS:task_state": null,
+                "OS-EXT-STS:vm_state": "active",
+                "OS-SCH-HNT:scheduler_hints": null,
+                "OS-SRV-USG:launched_at": "2020-05-06T21:10:38.000000",
+                "OS-SRV-USG:terminated_at": null,
+                "accessIPv4": "10.10.10.18",
+                "accessIPv6": "",
+                "addresses": {
+                    "int_network": [
+                        {
+                            "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:c7:e5:81",
+                            "OS-EXT-IPS:type": "fixed",
+                            "addr": "20.20.20.7",
+                            "version": 4
+                        },
+                        {
+                            "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:c7:e5:81",
+                            "OS-EXT-IPS:type": "floating",
+                            "addr": "10.10.10.18",
+                            "version": 4
+                        }
+                    ]
+                },
+                "adminPass": null,
+                "az": "nova",
+                "block_device_mapping": null,
+                "cloud": "ospcloud",
+                "config_drive": "",
+                "created": "2020-05-06T21:10:21Z",
+                "created_at": "2020-05-06T21:10:21Z",
+                "description": "appdb1",
+                "disk_config": "MANUAL",
+                "flavor": {
+                    "id": "c1dcac31-e195-420c-ac01-15fb443225ca"
+                },
+                "has_config_drive": false,
+                "host": "comp01.example.com",
+                "hostId": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                "host_id": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                "host_status": "UP",
+                "hostname": "appdb1",
+                "hypervisor_hostname": "comp01.example.com",
+                "id": "c10089b7-bbea-4ce8-a832-40ae43539ceb",
+                "image": {
+                    "id": "9c541893-533a-446a-86ae-b64531f7b020"
+                },
+                "instance_name": "instance-00000007",
+                "interface_ip": "10.10.10.18",
+                "kernel_id": "",
+                "key_name": "ansible_ssh",
+                "launch_index": 0,
+                "launched_at": "2020-05-06T21:10:38.000000",
+                "location": {
+                    "cloud": "ospcloud",
+                    "project": {
+                        "domain_id": null,
+                        "domain_name": "default",
+                        "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                        "name": "admin"
+                    },
+                    "region_name": "RegionOne",
+                    "zone": "nova"
+                },
+                "locked": false,
+                "metadata": {
+                    "deployment_name": "QA",
+                    "group": "appdbs"
+                },
+                "name": "appdb1",
+                "networks": {},
+                "os-extended-volumes:volumes_attached": [],
+                "personality": null,
+                "power_state": 1,
+                "private_v4": "20.20.20.7",
+                "progress": 0,
+                "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "properties": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:host": "comp01.example.com",
+                    "OS-EXT-SRV-ATTR:hostname": "appdb1",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000007",
+                    "OS-EXT-SRV-ATTR:kernel_id": "",
+                    "OS-EXT-SRV-ATTR:launch_index": 0,
+                    "OS-EXT-SRV-ATTR:ramdisk_id": "",
+                    "OS-EXT-SRV-ATTR:reservation_id": "r-x12i0vor",
+                    "OS-EXT-SRV-ATTR:root_device_name": "/dev/vda",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2020-05-06T21:10:38.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "host_status": "UP",
+                    "locked": false,
+                    "os-extended-volumes:volumes_attached": [],
+                    "trusted_image_certificates": null
+                },
+                "public_v4": "10.10.10.18",
+                "public_v6": "",
+                "ramdisk_id": "",
+                "region": "RegionOne",
+                "reservation_id": "r-x12i0vor",
+                "root_device_name": "/dev/vda",
+                "scheduler_hints": null,
+                "security_groups": [
+                    {
+                        "name": "db"
+                    }
+                ],
+                "server_groups": null,
+                "status": "ACTIVE",
+                "tags": [],
+                "task_state": null,
+                "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "terminated_at": null,
+                "trusted_image_certificates": null,
+                "updated": "2020-05-08T17:32:18Z",
+                "user_data": null,
+                "user_id": "97656d07875c40b38805582946989e49",
+                "vm_state": "active",
+                "volumes": []
+            },
+            {
+                "OS-DCF:diskConfig": "MANUAL",
+                "OS-EXT-AZ:availability_zone": "nova",
+                "OS-EXT-SRV-ATTR:host": "comp00.example.com",
+                "OS-EXT-SRV-ATTR:hostname": "app2",
+                "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                "OS-EXT-SRV-ATTR:instance_name": "instance-00000006",
+                "OS-EXT-SRV-ATTR:kernel_id": "",
+                "OS-EXT-SRV-ATTR:launch_index": 0,
+                "OS-EXT-SRV-ATTR:ramdisk_id": "",
+                "OS-EXT-SRV-ATTR:reservation_id": "r-mfzk28lw",
+                "OS-EXT-SRV-ATTR:root_device_name": "/dev/vda",
+                "OS-EXT-SRV-ATTR:user_data": null,
+                "OS-EXT-STS:power_state": 1,
+                "OS-EXT-STS:task_state": null,
+                "OS-EXT-STS:vm_state": "active",
+                "OS-SCH-HNT:scheduler_hints": null,
+                "OS-SRV-USG:launched_at": "2020-05-06T21:10:18.000000",
+                "OS-SRV-USG:terminated_at": null,
+                "accessIPv4": "10.10.10.11",
+                "accessIPv6": "",
+                "addresses": {
+                    "int_network": [
+                        {
+                            "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:19:9c:71",
+                            "OS-EXT-IPS:type": "fixed",
+                            "addr": "20.20.20.5",
+                            "version": 4
+                        },
+                        {
+                            "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:19:9c:71",
+                            "OS-EXT-IPS:type": "floating",
+                            "addr": "10.10.10.11",
+                            "version": 4
+                        }
+                    ]
+                },
+                "adminPass": null,
+                "az": "nova",
+                "block_device_mapping": null,
+                "cloud": "ospcloud",
+                "config_drive": "",
+                "created": "2020-05-06T21:10:02Z",
+                "created_at": "2020-05-06T21:10:02Z",
+                "description": "app2",
+                "disk_config": "MANUAL",
+                "flavor": {
+                    "id": "c1dcac31-e195-420c-ac01-15fb443225ca"
+                },
+                "has_config_drive": false,
+                "host": "comp00.example.com",
+                "hostId": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                "host_id": "59b9f8bf3d22d1ecfa16e52e12ed870bad9a96c86298184f00241e5a",
+                "host_status": "UP",
+                "hostname": "app2",
+                "hypervisor_hostname": "comp00.example.com",
+                "id": "086d8224-bdc2-4e9b-a974-c8ac0a59ffe4",
+                "image": {
+                    "id": "9c541893-533a-446a-86ae-b64531f7b020"
+                },
+                "instance_name": "instance-00000006",
+                "interface_ip": "10.10.10.11",
+                "kernel_id": "",
+                "key_name": "ansible_ssh",
+                "launch_index": 0,
+                "launched_at": "2020-05-06T21:10:18.000000",
+                "location": {
+                    "cloud": "ospcloud",
+                    "project": {
+                        "domain_id": null,
+                        "domain_name": "default",
+                        "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                        "name": "admin"
+                    },
+                    "region_name": "RegionOne",
+                    "zone": "nova"
+                },
+                "locked": false,
+                "metadata": {
+                    "deployment_name": "QA",
+                    "group": "apps"
+                },
+                "name": "app2",
+                "networks": {},
+                "os-extended-volumes:volumes_attached": [],
+                "personality": null,
+                "power_state": 1,
+                "private_v4": "20.20.20.5",
+                "progress": 0,
+                "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "properties": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:host": "comp00.example.com",
+                    "OS-EXT-SRV-ATTR:hostname": "app2",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp00.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000006",
+                    "OS-EXT-SRV-ATTR:kernel_id": "",
+                    "OS-EXT-SRV-ATTR:launch_index": 0,
+                    "OS-EXT-SRV-ATTR:ramdisk_id": "",
+                    "OS-EXT-SRV-ATTR:reservation_id": "r-mfzk28lw",
+                    "OS-EXT-SRV-ATTR:root_device_name": "/dev/vda",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2020-05-06T21:10:18.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "host_status": "UP",
+                    "locked": false,
+                    "os-extended-volumes:volumes_attached": [],
+                    "trusted_image_certificates": null
+                },
+                "public_v4": "10.10.10.11",
+                "public_v6": "",
+                "ramdisk_id": "",
+                "region": "RegionOne",
+                "reservation_id": "r-mfzk28lw",
+                "root_device_name": "/dev/vda",
+                "scheduler_hints": null,
+                "security_groups": [
+                    {
+                        "name": "apps"
+                    }
+                ],
+                "server_groups": null,
+                "status": "ACTIVE",
+                "tags": [],
+                "task_state": null,
+                "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "terminated_at": null,
+                "trusted_image_certificates": null,
+                "updated": "2020-05-08T17:32:24Z",
+                "user_data": null,
+                "user_id": "97656d07875c40b38805582946989e49",
+                "vm_state": "active",
+                "volumes": []
+            },
+            {
+                "OS-DCF:diskConfig": "MANUAL",
+                "OS-EXT-AZ:availability_zone": "nova",
+                "OS-EXT-SRV-ATTR:host": "comp01.example.com",
+                "OS-EXT-SRV-ATTR:hostname": "app1",
+                "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                "OS-EXT-SRV-ATTR:instance_name": "instance-00000005",
+                "OS-EXT-SRV-ATTR:kernel_id": "",
+                "OS-EXT-SRV-ATTR:launch_index": 0,
+                "OS-EXT-SRV-ATTR:ramdisk_id": "",
+                "OS-EXT-SRV-ATTR:reservation_id": "r-34ma9qnp",
+                "OS-EXT-SRV-ATTR:root_device_name": "/dev/vda",
+                "OS-EXT-SRV-ATTR:user_data": null,
+                "OS-EXT-STS:power_state": 1,
+                "OS-EXT-STS:task_state": null,
+                "OS-EXT-STS:vm_state": "active",
+                "OS-SCH-HNT:scheduler_hints": null,
+                "OS-SRV-USG:launched_at": "2020-05-06T21:10:00.000000",
+                "OS-SRV-USG:terminated_at": null,
+                "accessIPv4": "10.10.10.4",
+                "accessIPv6": "",
+                "addresses": {
+                    "int_network": [
+                        {
+                            "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:d5:1a:17",
+                            "OS-EXT-IPS:type": "fixed",
+                            "addr": "20.20.20.3",
+                            "version": 4
+                        },
+                        {
+                            "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:d5:1a:17",
+                            "OS-EXT-IPS:type": "floating",
+                            "addr": "10.10.10.4",
+                            "version": 4
+                        }
+                    ]
+                },
+                "adminPass": null,
+                "az": "nova",
+                "block_device_mapping": null,
+                "cloud": "ospcloud",
+                "config_drive": "",
+                "created": "2020-05-06T21:09:45Z",
+                "created_at": "2020-05-06T21:09:45Z",
+                "description": "app1",
+                "disk_config": "MANUAL",
+                "flavor": {
+                    "id": "c1dcac31-e195-420c-ac01-15fb443225ca"
+                },
+                "has_config_drive": false,
+                "host": "comp01.example.com",
+                "hostId": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                "host_id": "b3aa7068069c188c8861a9add78f3de5e78d5181e211b8018415dd80",
+                "host_status": "UP",
+                "hostname": "app1",
+                "hypervisor_hostname": "comp01.example.com",
+                "id": "b8dddfbd-df67-42c6-81c9-96f96c55ca39",
+                "image": {
+                    "id": "9c541893-533a-446a-86ae-b64531f7b020"
+                },
+                "instance_name": "instance-00000005",
+                "interface_ip": "10.10.10.4",
+                "kernel_id": "",
+                "key_name": "ansible_ssh",
+                "launch_index": 0,
+                "launched_at": "2020-05-06T21:10:00.000000",
+                "location": {
+                    "cloud": "ospcloud",
+                    "project": {
+                        "domain_id": null,
+                        "domain_name": "default",
+                        "id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                        "name": "admin"
+                    },
+                    "region_name": "RegionOne",
+                    "zone": "nova"
+                },
+                "locked": false,
+                "metadata": {
+                    "deployment_name": "QA",
+                    "group": "apps"
+                },
+                "name": "app1",
+                "networks": {},
+                "os-extended-volumes:volumes_attached": [],
+                "personality": null,
+                "power_state": 1,
+                "private_v4": "20.20.20.3",
+                "progress": 0,
+                "project_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "properties": {
+                    "OS-DCF:diskConfig": "MANUAL",
+                    "OS-EXT-AZ:availability_zone": "nova",
+                    "OS-EXT-SRV-ATTR:host": "comp01.example.com",
+                    "OS-EXT-SRV-ATTR:hostname": "app1",
+                    "OS-EXT-SRV-ATTR:hypervisor_hostname": "comp01.example.com",
+                    "OS-EXT-SRV-ATTR:instance_name": "instance-00000005",
+                    "OS-EXT-SRV-ATTR:kernel_id": "",
+                    "OS-EXT-SRV-ATTR:launch_index": 0,
+                    "OS-EXT-SRV-ATTR:ramdisk_id": "",
+                    "OS-EXT-SRV-ATTR:reservation_id": "r-34ma9qnp",
+                    "OS-EXT-SRV-ATTR:root_device_name": "/dev/vda",
+                    "OS-EXT-SRV-ATTR:user_data": null,
+                    "OS-EXT-STS:power_state": 1,
+                    "OS-EXT-STS:task_state": null,
+                    "OS-EXT-STS:vm_state": "active",
+                    "OS-SCH-HNT:scheduler_hints": null,
+                    "OS-SRV-USG:launched_at": "2020-05-06T21:10:00.000000",
+                    "OS-SRV-USG:terminated_at": null,
+                    "host_status": "UP",
+                    "locked": false,
+                    "os-extended-volumes:volumes_attached": [],
+                    "trusted_image_certificates": null
+                },
+                "public_v4": "10.10.10.4",
+                "public_v6": "",
+                "ramdisk_id": "",
+                "region": "RegionOne",
+                "reservation_id": "r-34ma9qnp",
+                "root_device_name": "/dev/vda",
+                "scheduler_hints": null,
+                "security_groups": [
+                    {
+                        "name": "apps"
+                    }
+                ],
+                "server_groups": null,
+                "status": "ACTIVE",
+                "tags": [],
+                "task_state": null,
+                "tenant_id": "1e3aa106a2f94e93bb328f6bebe8b965",
+                "terminated_at": null,
+                "trusted_image_certificates": null,
+                "updated": "2020-05-08T17:32:29Z",
+                "user_data": null,
+                "user_id": "97656d07875c40b38805582946989e49",
+                "vm_state": "active",
+                "volumes": []
+            }
+        ]
+    }
+}
+
+PLAY RECAP ***********************************************************************************************************************************************************************************************************************************
+localhost                  : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
